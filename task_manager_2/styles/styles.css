@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary: #FF6F61
+}
+
+body {
+    height: 150vh;
+    background-image: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/mountains.jpg');
+}
+
+header{
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+header h1{
+    padding: 2%;
+    color: white;
+}
+
+main {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+#list-section{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    align-items: flex-start;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: rgba(255, 255, 255, .8);
+
+}
+
+#form-div {
+    flex: 1;
+    background-color: rgba(255, 255, 255, .8);
+    padding: 3%;
+    display: none;
+
+}
+
+#important {
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#toggle-form {
+    justify-content: center;
+    background-color: white;
+}
+
+button {
+    background-color: rgba(140, 200, 150, 1) !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+#form-btn-div {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.task{
+    display: flex;
+    /* justify-content: center; */
+    border: 2px solid #912;
+    box-shadow: 3px solid aqua;
+}
+
+.task-header{
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #912 ;
+    padding: 1rem;
+    justify-content: center;
+
+}
+
+.task-body{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.rmv-task-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
