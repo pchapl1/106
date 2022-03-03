@@ -37,7 +37,7 @@ function toggleForm(){
 
 function displayTask(task){
 
-    let syntax = `<div class="task">
+    let syntax = `<div id="${task._id}" class="task">
         <div class="task-header">
             <h5>${task.title}</h5>
             <p>${task.description}</p>
@@ -48,7 +48,7 @@ function displayTask(task){
             <label class="date">Contact info: ${task.contact}</label>
         </div>
         <div class="rmv-task-btn">
-            <button onclick="this.parentNode.parentNode.remove()" class="btn btn-danger float-right">Remove</button>
+            <button onclick="deleteTask('${task._id}')" class="btn btn-danger float-right">Remove</button>
         </div>
 
     </div>
@@ -108,8 +108,8 @@ function saveTask(e){
         data: data,
         contentType: 'application/json',
         success: function(data){
-            console.log('success: ', data)
-            displayTask(task)
+            let cleanedTask = JSON.parse(task)
+            displayTask(cleanedTask)
 
         },
         error: function(error){
@@ -126,8 +126,9 @@ function saveTask(e){
 }
 
 
-function deleteTask(){
-    console.log('deleting')
+function deleteTask(id){
+    console.log('deleting', id)
+    $('#' + id).remove()
 }
 
 function retrieveTasks(){
@@ -140,6 +141,7 @@ function retrieveTasks(){
             for (i = 0; i<list.length;i++){
                 let task = list[i]
                 if (task.name == 'pchap'){
+
                     displayTask(task)
                 }
             }
